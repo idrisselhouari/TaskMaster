@@ -1,0 +1,151 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* TASKS LIST STYLE */
+.task-list {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-item {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.task-date {
+    font-size: 14px;
+    color: #888;
+    margin-left: 10px;
+}
+
+/* COMPLETE TASK BUTTON STYLE  */
+.complete-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.complete-button:hover {
+    background-color: #218838;
+}
+
+/* ADD TASK BUTTON STYLE */
+.add-button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1);
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* THE ADDITION FORM STYLE  */
+.add-task-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 100%;
+    max-width: 400px;
+}
+
+.add-task-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.add-task-form input[type="text"],
+.add-task-form input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.add-task-form button {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.add-task-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.add-task-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.add-task-form button[type="button"] {
+    background-color: #6c757d;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.add-task-form button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+/* SHOW HIDDEN FORM STYLE */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.show {
+    display: block;
+}
