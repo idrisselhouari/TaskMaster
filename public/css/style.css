@@ -9,6 +9,36 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
+/* HEADER STYLE */
+header{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #f4f4f9;
+}
+header ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+header ul li{
+    margin: 0 15px;
+}
+header a{
+    text-decoration: none;
+    color: #007bff;
+    padding: 6px;
+}
+header a:hover{
+    color: white;
+    background-color: #007bff;
+    border: #007bff solid 1px;
+    border-radius: 10em;
+}
 
 /* TASKS LIST STYLE */
 .task-list {

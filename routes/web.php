@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ToDoListController;
+use App\Http\Controllers\CompletedTasksController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,8 @@ use App\Http\Controllers\ToDoListController;
 */
 
 Route::get('/', [ToDoListController::class, 'index']);
+
+Route::get('/completedTasksRoute', [CompletedTasksController::class, 'ListCompletedTasks'])->name('completedtasks');
 
 Route::post('/addTaskRoute', [ToDoListController::class, 'addTask'])->name('addTask');
 

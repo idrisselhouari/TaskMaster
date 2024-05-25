@@ -14,10 +14,18 @@
 
 </head>
 <body>
+    <header>
+        <h1>To Do List</h1>
+        <nav>
+            <ul>
+                <li><a href="/">My Tasks</a></li>
+                <li><a href="{{ route('completedtasks') }}">Completed</a></li>
+            </ul>
+        </nav>
+    </header>   
+
     <div class="container">
         <div>
-            <h1>To Do List</h1>
-
             @foreach ($listItems as $listItem)
                 <div class="task-list">
                     <p class="task-item">{{ $listItem->task_title }} <span class="task-date">{{ $listItem->task_date }}</span></p>
