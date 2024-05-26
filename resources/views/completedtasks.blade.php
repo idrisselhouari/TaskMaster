@@ -24,9 +24,9 @@
                 <div class="task-list">
                     <p class="task-item">{{ $listItem->task_title }} <span class="task-date">{{ $listItem->task_date }}</span></p>
 
-                    <form action="{{ route('markCompleted', $listItem->id) }}" method="post" class="complete-form">
+                    <form action="{{ route('markNotCompleted', $listItem->id) }}" method="post" class="complete-form">
                         {{ csrf_field() }}
-                        <button type="submit" class="complete-button">Mark Complete</button>
+                        <button type="submit" class="complete-button"><img src="{{ asset('images\reload_icon.png') }}" alt="" srcset="" class="icon"></button>
                     </form>
                 </div>
             @endforeach

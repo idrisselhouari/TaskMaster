@@ -20,6 +20,10 @@ Route::get('/completedTasksRoute', [CompletedTasksController::class, 'ListComple
 
 Route::post('/addTaskRoute', [ToDoListController::class, 'addTask'])->name('addTask');
 
+Route::delete('/task/{id}', [ToDoListController::class, 'deleteTask'])->name('destroyTask');
+
 Route::post('/markCompletedRoute/{id}', [ToDoListController::class, 'markCompleted'])->name('markCompleted');
+
+Route::post('/markNotCompletedRoute/{id}', [ToDoListController::class, 'markNotCompleted'])->name('markNotCompleted');
 
 

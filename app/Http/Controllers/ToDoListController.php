@@ -13,16 +13,6 @@ class ToDoListController extends Controller
         return view('welcome', ['listItems' => ListItem::where('is_completed', 0)->get()]);
     }
 
-    public function markCompleted($id){
-        // return view('welcome', ['listItems' => ListItem::all()]);
-        $listTask = ListItem::find($id);
-        $listTask->is_completed = 1;
-        $listTask->save();
-
-        return redirect('/');
- 
-    }
-
     public function addTask(Request $request){
         $newTask = new ListItem;
         $newTask->task_title = $request->inputItem;
@@ -31,6 +21,32 @@ class ToDoListController extends Controller
         $newTask->save();
         
         // return view('welcome', ['listItems' => ListItem::all()]);
+        return redirect('/');
+    } 
+    
+    public function markCompleted($id){
+        // return view('welcome', ['listItems' => ListItem::all()]);
+        $listTask = ListItem::find($id);
+        $listTask->is_completed = 1;
+        $listTask->save();
+
+        return redirect('/');
+    }
+
+    public function markNotCompleted($id){
+        // return view('welcome', ['listItems' => ListItem::all()]);
+        $listTask = ListItem::find($id);
+        $listTask->is_completed = 0;
+        $listTask->save();
+
+        return redirect('/');
+    }
+
+    public function deleteTask($id)
+    {
+        $task = ListItem::findOrFail($id);
+        $task->delete();
+        
         return redirect('/');
     }
 }

@@ -22,22 +22,28 @@ header{
 }
 header ul{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     list-style: none;
 }
 header ul li{
     margin: 0 15px;
+    /* width: 6em; */
+    /* text-align: center; */
 }
 header a{
     text-decoration: none;
     color: #007bff;
     padding: 6px;
+    font-weight: bold;
+    /* width: 100%; */
 }
 header a:hover{
     color: white;
     background-color: #007bff;
     border: #007bff solid 1px;
     border-radius: 10em;
+    font-weight: bold;
 }
 
 /* TASKS LIST STYLE */
@@ -48,6 +54,9 @@ header a:hover{
     margin-bottom: 15px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .task-item {
@@ -64,28 +73,39 @@ header a:hover{
 }
 
 /* COMPLETE TASK BUTTON STYLE  */
-.complete-button {
-    background-color: #28a745;
-    color: #fff;
+.task-actions{
+    display: flex;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+}
+.complete-button, .delete-button{
+    background-color: #fff;
+    /* color: #fff; */
     border: none;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
+    padding: 4px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+    /* font-size: 14px; */
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
 }
 
-.complete-button:hover {
+/* .complete-button:hover {
     background-color: #218838;
-}
+} */
 
 /* ADD TASK BUTTON STYLE */
 .add-button {
-    display: block;
-    width: 100%;
-    max-width: 200px;
-    margin: 20px auto;
-    padding: 15px;
+    /* display: block; */
+    /* width: 100%; */
+    /* max-width: 200px; */
+    /* margin: 20px auto; */
+    padding: 7px 2em;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -98,7 +118,9 @@ header a:hover{
 }
 
 .add-button:hover {
-    background-color: #0056b3;
+    background-color: #fff;
+    color: #007bff;
+    font-weight: bold;
     box-shadow: 0 6px 10px rgba(0, 123, 255, 0.2);
 }
 
@@ -163,6 +185,7 @@ header a:hover{
 .add-task-form button[type="button"]:hover {
     background-color: #5a6268;
 }
+
 
 /* SHOW HIDDEN FORM STYLE */
 .overlay {
