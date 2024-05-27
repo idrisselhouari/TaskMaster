@@ -23,7 +23,14 @@
             <div class="signup-container">
                 <h1 style="text-align: center;">Create Your Account</h1>
                 <p style="text-align: center;">Join TaskMaster and start organizing your tasks efficiently.</p>
-                <form class="signup-form" action="register_action.php" method="post">
+                @if(Session::has('success'))
+                    <div role='alert' class="form-alert">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
+
+                <form class="signup-form" action="{{ route('register_action') }}" method="post">
+                    {{ csrf_field() }}
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstname">First Name</label>

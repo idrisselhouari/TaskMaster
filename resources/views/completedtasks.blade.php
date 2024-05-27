@@ -12,7 +12,7 @@
         <h1>TaskTracker</h1>
         <nav>
             <ul>
-                <li><a href="/">My Tasks</a></li>
+                <li><a href="{{ route('tasks') }}">My Tasks</a></li>
                 <li><a href="{{ route('completedtasks') }}">Completed</a></li>
             </ul>
         </nav>

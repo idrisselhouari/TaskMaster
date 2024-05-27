@@ -10,6 +10,10 @@ a{
     color: #5151e5;
     font-weight: bold;
 }
+.form-alert{
+    margin: 5px;
+    text-align: center;
+}
 body {
     background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
     color: white;

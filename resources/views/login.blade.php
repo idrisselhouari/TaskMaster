@@ -22,7 +22,8 @@
             <div class="signin-container">
                 <h1 style="text-align: center;">Welcome Back</h1>
                 <p style="text-align: center;">Sign in to your TaskMaster account.</p>
-                <form class="signin-form" action="login_action.php" method="post">
+                <form class="signin-form" action="{{ route('login_action') }}" method="post">
+                {{ csrf_field() }}
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required>

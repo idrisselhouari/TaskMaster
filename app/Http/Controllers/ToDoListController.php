@@ -3,58 +3,52 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ListItem;
+use App\Models\Tasks;
 
 
 class ToDoListController extends Controller
 {
-
-    public function index(){
-        return view('welcome', ['listItems' => ListItem::where('is_completed', 0)->get()]);
-    }
-
-    public function signUp(){
-        return view('signup');
-    }
-    public function signIn(){
-        return view('signin');
+    public function tasks(){
+        return view('tasks', ['listItems' => Tasks::where('is_completed', 0)->get()]);
     }
 
     public function addTask(Request $request){
-        $newTask = new ListItem;
-        $newTask->task_title = $request->inputItem;
-        $newTask->task_date = $request->dateItem;
+
+        $newTask = new Tasks;
+        $newTask->task_title = $request->task_title;
+        $newTask->task_note = $request->task_note;
+        $newTask->task_date = $request->task_date;
+        $newTask->user_id = 1;
         $newTask->is_completed = 0;
         $newTask->save();
         
-        // return view('welcome', ['listItems' => ListItem::all()]);
-        return redirect('/');
+        return redirect('/tasks');
     } 
     
     public function markCompleted($id){
-        // return view('welcome', ['listItems' => ListItem::all()]);
-        $listTask = ListItem::find($id);
+
+        $listTask = Tasks::find($id);
         $listTask->is_completed = 1;
         $listTask->save();
 
-        return redirect('/');
+        return redirect('/completedtasks');
     }
 
     public function markNotCompleted($id){
-        // return view('welcome', ['listItems' => ListItem::all()]);
-        $listTask = ListItem::find($id);
+        
+        $listTask = Tasks::find($id);
         $listTask->is_completed = 0;
         $listTask->save();
 
-        return redirect('/');
+        return redirect('/tasks');
     }
 
     public function deleteTask($id)
     {
-        $task = ListItem::findOrFail($id);
+        $task = Tasks::findOrFail($id);
         $task->delete();
         
-        return redirect('/');
+        return redirect('/tasks');
     }
 }
  

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ToDoListController;
 use App\Http\Controllers\CompletedTasksController;
 /*
@@ -14,22 +16,32 @@ use App\Http\Controllers\CompletedTasksController;
 |
 */
 
-Route::get('/', [ToDoListController::class, 'index']);
+// Authentification Controller 
+Route::get('/', [AuthController::class, 'index']);
+Route::get('/', [AuthController::class, 'index'])->name('home');
 
-Route::get('/', [ToDoListController::class, 'index'])->name('home');
+Route::get('/Register', [AuthController::class, 'registerPage'])->name('signUp');
+Route::post('/Register', [AuthController::class, 'registerPost'])->name('register_action');
 
-Route::get('/signUpRoute', [ToDoListController::class, 'signUp'])->name('signUp');
+Route::get('/Login', [AuthController::class, 'loginPage'])->name('signIn');
+Route::post('/Login', [AuthController::class, 'loginPost'])->name('login_action');
 
-Route::get('/signInRoute', [ToDoListController::class, 'signIn'])->name('signIn');
 
+// Completed Tasks Controller
 Route::get('/completedTasksRoute', [CompletedTasksController::class, 'ListCompletedTasks'])->name('completedtasks');
+Route::get('/completedtasks', [CompletedTasksController::class, 'ListCompletedTasks']);
 
+// To Do List Controller
 Route::post('/addTaskRoute', [ToDoListController::class, 'addTask'])->name('addTask');
-
 Route::delete('/task/{id}', [ToDoListController::class, 'deleteTask'])->name('destroyTask');
 
 Route::post('/markCompletedRoute/{id}', [ToDoListController::class, 'markCompleted'])->name('markCompleted');
-
 Route::post('/markNotCompletedRoute/{id}', [ToDoListController::class, 'markNotCompleted'])->name('markNotCompleted');
+
+// TAsk Page
+Route::get('/tasks', [ToDoListController::class, 'tasks'])->name('tasks');
+
+// Compeleted Tasks
+
 
 

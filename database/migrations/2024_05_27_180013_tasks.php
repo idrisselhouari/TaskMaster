@@ -13,12 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('list_items', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('task_title');
             $table->date('task_date');
+            $table->string('task_note');
             $table->integer("is_completed");
+            $table->unsignedBigInteger('user_id'); // Add this line
             $table->timestamps();
+
+            // Add foreign key constraint
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -29,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('list_items');
+        //
     }
 };
