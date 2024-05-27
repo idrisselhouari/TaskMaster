@@ -13,6 +13,13 @@ class ToDoListController extends Controller
         return view('welcome', ['listItems' => ListItem::where('is_completed', 0)->get()]);
     }
 
+    public function signUp(){
+        return view('signup');
+    }
+    public function signIn(){
+        return view('signin');
+    }
+
     public function addTask(Request $request){
         $newTask = new ListItem;
         $newTask->task_title = $request->inputItem;

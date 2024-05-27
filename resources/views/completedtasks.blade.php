@@ -9,7 +9,7 @@
 <body>
     
     <header>
-        <h1>To Do List</h1>
+        <h1>TaskTracker</h1>
         <nav>
             <ul>
                 <li><a href="/">My Tasks</a></li>

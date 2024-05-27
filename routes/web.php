@@ -16,6 +16,12 @@ use App\Http\Controllers\CompletedTasksController;
 
 Route::get('/', [ToDoListController::class, 'index']);
 
+Route::get('/', [ToDoListController::class, 'index'])->name('home');
+
+Route::get('/signUpRoute', [ToDoListController::class, 'signUp'])->name('signUp');
+
+Route::get('/signInRoute', [ToDoListController::class, 'signIn'])->name('signIn');
+
 Route::get('/completedTasksRoute', [CompletedTasksController::class, 'ListCompletedTasks'])->name('completedtasks');
 
 Route::post('/addTaskRoute', [ToDoListController::class, 'addTask'])->name('addTask');

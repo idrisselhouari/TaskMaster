@@ -12,3 +12,4 @@ document.getElementById('overlay').addEventListener('click', function() {
     document.getElementById('addTaskForm').classList.remove('show');
     document.getElementById('overlay').classList.remove('show');
 });
+
