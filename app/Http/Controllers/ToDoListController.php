@@ -9,7 +9,8 @@ use App\Models\Tasks;
 class ToDoListController extends Controller
 {
     public function tasks(){
-        return view('tasks', ['listItems' => Tasks::where('is_completed', 0)->get()]);
+        $user_id = session('user_id');
+        return view('tasks', ['listItems' => Tasks::where('is_completed', 0)->where('user_id', $user_id)->get()]);
     }
 
     public function addTask(Request $request){
@@ -18,13 +19,26 @@ class ToDoListController extends Controller
         $newTask->task_title = $request->task_title;
         $newTask->task_note = $request->task_note;
         $newTask->task_date = $request->task_date;
-        $newTask->user_id = 1;
+        $newTask->user_id = session('user_id');
         $newTask->is_completed = 0;
         $newTask->save();
         
         return redirect('/tasks');
     } 
-    
+
+    public function updateTask(Request $request, $id){
+
+        $Task = Tasks::find($id);
+        $Task->task_title = $request->task_title;
+        $Task->task_note = $request->task_note;
+        $Task->task_date = $request->task_date;
+
+        $Task->save();
+
+        return redirect('/tasks');
+
+    }
+
     public function markCompleted($id){
 
         $listTask = Tasks::find($id);

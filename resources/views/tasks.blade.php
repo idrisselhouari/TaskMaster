@@ -9,28 +9,21 @@
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 <body>
-    <header>
-        <h1>TaskTracker</h1>
-        <nav>
-            <ul>
-                <li><button id="showFormButton" class="add-button">Add</button></li>
-                <li><a href="/">My Tasks</a></li>
-                <li><a href="{{ route('completedtasks') }}">Completed</a></li>
-            </ul>
-        </nav>
-    </header>   
+    @include('assets/header')
 
     <div class="container">
-        <h1>Welcome </h1>
+
         <div>
             @foreach ($listItems as $listItem)
-            <div class="task-list">
-                <p class="task-item">{{ $listItem->task_title }} <span class="task-date">{{ $listItem->task_date }}</span></p>
+            <div class="task-list" data-id="{{ $listItem->id }}" data-title="{{ $listItem->task_title }}" data-date="{{ $listItem->task_date }}" data-note="{{ $listItem->task_note }}">
+                <p class="task-item">{{ $listItem->task_title }} <span class="task-date">{{ $listItem->task_date }}</span> {{ $listItem->task_note }}</p>
 
                 <div class="task-actions">
                     <form action="{{ route('markCompleted', $listItem->id) }}" method="post" class="complete-form">
@@ -44,28 +37,14 @@
                         <button type="submit" class="delete-button"><img src="{{ asset('images/delete_icon.png') }}" alt="Delete" class="icon"></button>
                     </form>
                 </div>
-                
             </div>
             @endforeach
 
-            <!-- <button id="showFormButton" class="add-button">Add Task</button> -->
+            @include('taskActions/addTaskForm')
 
-            <div class="overlay" id="overlay"></div>
-            
-            <form action="{{ route('addTask') }}" method="post" class="add-task-form" id="addTaskForm">
-                {{ csrf_field() }}
-                <label for="inputItem">Task</label>
-                <input type="text" name="task_title" required>
-                <br>
-                <label for="inputItem">Note</label>
-                <input type="text" name="task_note" required>
-                <br>
-                <label for="dateItem">Date</label>
-                <input type="date" name="task_date" required>
-                <br>
-                <button type="submit">Add</button>
-                <button type="button" id="closeFormButton">Cancel</button>
-            </form>
+            @foreach ($listItems as $listItem)
+                @include('taskActions/updateTaskForm')
+            @endforeach
         </div>
     </div>
 

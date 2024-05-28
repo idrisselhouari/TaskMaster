@@ -7,22 +7,14 @@
     <title>Completed Tasks</title>
 </head>
 <body>
-    
-    <header>
-        <h1>TaskTracker</h1>
-        <nav>
-            <ul>
-                <li><a href="{{ route('tasks') }}">My Tasks</a></li>
-                <li><a href="{{ route('completedtasks') }}">Completed</a></li>
-            </ul>
-        </nav>
-    </header> 
+
+    @include('assets/header')
 
     <div class="container">
         <div>
             @foreach ($listItems as $listItem)
                 <div class="task-list">
-                    <p class="task-item">{{ $listItem->task_title }} <span class="task-date">{{ $listItem->task_date }}</span></p>
+                    <p class="task-item">{{ $listItem->task_title }} <span class="task-date">{{ $listItem->task_date }}</span> {{ $listItem->task_note }}</p>
 
                     <form action="{{ route('markNotCompleted', $listItem->id) }}" method="post" class="complete-form">
                         {{ csrf_field() }}
@@ -30,7 +22,12 @@
                     </form>
                 </div>
             @endforeach
+
+            @include('taskActions/addTaskForm')
+
         </div>
     </div>
+    <script src="{{ asset('js/script.js') }}"></script>
+
 </body>
 </html>

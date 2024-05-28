@@ -7,12 +7,12 @@ body, h1, h2, p, button {
 }
 a{
     text-decoration: none;
-    color: #5151e5;
+    color: rgb(94, 94, 207) ;
     font-weight: bold;
 }
 body {
-    background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
-    color: white;
+    background: linear-gradient(135deg, #d6f1f1 10%, #dedef5 100%);
+    color: rgb(94, 94, 207) ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,18 +20,64 @@ body {
     text-align: center;
     overflow: hidden;
 }
+h1 {
+    color: rgb(238,174,202); /* Fallback color */
+    background: radial-gradient(circle, rgb(124, 16, 146) 0%, rgb(94, 94, 207) 50%, rgb(0, 0, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent; /* Uncomment if needed for broader browser support */
+}
 
 .container {
     width: 90%;
     max-width: 1200px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
+}
+/* Add this to your CSS file or within a <style> tag */
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile-info {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.logout-button:hover {
+    color: #0056b3;
 }
 
 .header {
     width: 100%;
     padding: 20px 0;
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,7 +101,7 @@ body {
     color: #5151e5;
     border: none;
     padding: 10px 20px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
@@ -74,8 +120,11 @@ body {
 
 .content {
     width: 100%;
-    padding: 20px;
+    /* padding: 20px; */
     animation: fadeInUp 1s ease-out;
+    margin: auto auto;
+    /* margin-top: auto; */
+    /* background-color: aqua; */
 }
 
 .content p {
@@ -86,7 +135,7 @@ body {
 .features {
     display: flex;
     justify-content: space-around;
-    margin: 50px 0;
+    margin: 6em 0;
 }
 
 .feature {
@@ -103,7 +152,8 @@ body {
 }
 
 .footer {
-    margin-top: 20px;
+    margin: 20px 20px;
+    display: flex;
 }
 
 .footer p {

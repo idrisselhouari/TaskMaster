@@ -10,6 +10,43 @@ body {
     margin: 0 auto;
 }
 /* HEADER STYLE */
+/* Add this to your CSS file or within a <style> tag */
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile-info {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px 0 0 10px;
+    width:15em; 
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 0;
+}
+
+.logout-button:hover {
+    color: #0056b3;
+}
+
 header{
     display: flex;
     width: 100%;
@@ -186,6 +223,72 @@ header a:hover{
     background-color: #5a6268;
 }
 
+
+
+
+/* Update Form Styles */
+/* Add to your existing CSS file */
+
+.update-task-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 100%;
+    max-width: 400px;
+}
+
+.update-task-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.update-task-form input[type="text"],
+.update-task-form input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.update-task-form button {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.update-task-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.update-task-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.update-task-form button[type="button"] {
+    background-color: #6c757d;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.update-task-form button[type="button"]:hover {
+    background-color: #5a6268;
+}
 
 /* SHOW HIDDEN FORM STYLE */
 .overlay {
