@@ -13,12 +13,12 @@ a{
 body {
     background: linear-gradient(135deg, #d6f1f1 10%, #dedef5 100%);
     color: rgb(94, 94, 207) ;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 h1 {
     color: rgb(238,174,202); /* Fallback color */
@@ -77,7 +77,7 @@ h1 {
 .header {
     width: 100%;
     padding: 20px 0;
-    margin-top: 2em;
+    /* margin-top: 2em; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,31 +135,96 @@ h1 {
 .features {
     display: flex;
     justify-content: space-around;
-    margin: 6em 0;
+    margin: 2em 0;
+    height: auto;
 }
 
 .feature {
-    max-width: 300px;
+    max-width: 260px;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    justify-content: flex-end; /* Align content to the bottom */
+    border-radius: 10px;
+    /* color: white; */
+    padding: 20px; /* Add padding for better readability */
+
+
 }
 
 .feature h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
+    font-size: 1.3em;
+    margin-bottom: 15px;
 }
 
 .feature p {
     font-size: 1.2em;
+    margin-bottom: 1em;
+}
+#feature1 {
+    background-image: url("../images/welcome/feature1.png");
+    
 }
 
-.footer {
-    margin: 20px 20px;
+#feature2 {
+    background-image: url("../images/welcome/feature2.png");
+}
+
+#feature3 {
+    background-image: url("../images/welcome/feature3.png");
+}
+
+.section-content{
     display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+.section-content img{
+    width: 40%;
+    margin: auto;
+}
+.section-content .section-text{
+    width: 40%;
+    margin: auto;
+}
+.section-content h2{
+    font-size: 2em;
+    margin: 1.5em 0;
+}
+.section-content p{
+    font-size: large;
+}
+
+section h2{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+/* FOOTER STYLE */
+.footer {
+    margin: 3em 1em;
+    display: flex;
+}
+
+#id_offers{
+    width: 70%;
 }
 
 .footer p {
     font-size: 1em;
     opacity: 0.7;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
+blockquote {
+    font-size: xx-large;
+    font-weight: bold;
+    font-style: italic;
+    margin: 20px 0;
+  } 
 
 @keyframes fadeIn {
     from { opacity: 0; }
