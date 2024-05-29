@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Task Master - Tasks</title>
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 </head>
 <body>
     @include('assets/header')
-
+    <h4 class="page-title">My Tasks</h4>
     <div class="container">
 
         <div>
@@ -28,22 +28,34 @@
                 </div>
             @else
                 @foreach ($listItems as $listItem)
-                <div class="task-list" data-id="{{ $listItem->id }}" data-title="{{ $listItem->task_title }}" data-date="{{ $listItem->task_date }}" data-note="{{ $listItem->task_note }}">
-                    <p class="task-item">{{ $listItem->task_title }} <span class="task-date">{{ $listItem->task_date }}</span> {{ $listItem->task_note }}</p>
+                <div class="task-list" data-title="{{ $listItem->task_title }}" data-date="{{ $listItem->task_date }}" data-time-from="{{ $listItem->task_time_from }}" data-time-to="{{ $listItem->task_time_to }}" data-description="{{ $listItem->task_description }}" data-priority="{{ $listItem->task_priority }}" data-category="{{ $listItem->task_category }}" data-tags="{{ $listItem->task_tags }}">
+                    <div class="task-info">
+                        <div class="task-title">
+                            <h3 class="task-item">{{ $listItem->task_title }}</h3>
+                            <p><span>Category:</span> {{ $listItem->task_category }}  |  <span>Priority:</span> {{ $listItem->task_priority }}</p>
+                        </div>
+                        <p class="task-date">{{ $listItem->task_date }} From {{ $listItem->task_time_from}} To {{ $listItem->task_time_to }}</p>
+                        <div class="task-details">
+                            <p>{{ $listItem->task_description }}</p>
+                            <p><i class="fas fa-tags"></i> {{ $listItem->task_tags }}</p>
+                        </div>
+                    </div>
 
                     <div class="task-actions">
                         <form action="{{ route('markCompleted', $listItem->id) }}" method="post" class="complete-form">
                             {{ csrf_field() }}
-                            <button type="submit" class="complete-button"><img src="{{ asset('images/submit_icon.png') }}" alt="Complete" class="icon"></button>
+                            <button type="submit" class="complete-button"><i class="fas fa-check"></i></button>
                         </form>
 
                         <form action="{{ route('destroyTask', $listItem->id) }}" method="post" class="delete-form">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <button type="submit" class="delete-button"><img src="{{ asset('images/delete_icon.png') }}" alt="Delete" class="icon"></button>
+                            <button type="submit" class="delete-button"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </div>
                 </div>
+
+
                 @endforeach
             @endif
             

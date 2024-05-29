@@ -25,7 +25,7 @@
                 <h1 style="text-align: center;">Create Your Account</h1>
                 <p style="text-align: center;">Join TaskMaster and start organizing your tasks efficiently.</p>
                 @if(Session::has('success'))
-                    <div role='alert' class="form-alert">
+                    <div role='alert' class="form-alert form-success">
                         {{ Session::get('success') }}
                     </div>
                 @endif

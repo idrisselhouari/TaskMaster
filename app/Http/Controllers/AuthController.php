@@ -54,10 +54,10 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($credetials)) {
-            return redirect('/tasks')->with('success', 'Login berhasil');
+            return redirect('/tasks')->with('success', 'Login successfully');
         }
 
-        return back()->with('error', 'Email or Password salah');
+        return back()->with('error', 'Email or Password incorrect !!');
     }
     
     public function logout(Request $request)

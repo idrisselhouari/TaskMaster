@@ -19,8 +19,14 @@ a {
 .form-alert {
     margin: 5px;
     text-align: center;
+    font-weight: bold;
 }
-
+.form-failure{
+    color: red;
+}
+.form-success{
+    color: green;
+}
 .logo {
     font-size: 2em;
     font-weight: bold;

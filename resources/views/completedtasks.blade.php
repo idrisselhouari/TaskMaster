@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Task Master - Completed</title>
+
     <link rel="stylesheet" href="{{ asset('css\style.css') }}">
-    <title>Completed Tasks</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
 </head>
 <body>
 
     @include('assets/header')
-
+    <h4 class="page-title">My Completed Tasks</h4>
     <div class="container">
         <div>
             @if ($listItems->isEmpty())
@@ -20,8 +26,17 @@
             @else
                 @foreach ($listItems as $listItem)
                     <div class="task-list">
-                        <p class="task-item">{{ $listItem->task_title }} <span class="task-date">{{ $listItem->task_date }}</span> {{ $listItem->task_note }}</p>
-
+                    <div class="task-info">
+                        <div class="task-title">
+                            <h3 class="task-item">{{ $listItem->task_title }}</h3>
+                            <p><span>Category:</span> {{ $listItem->task_category }}  |  <span>Priority:</span> {{ $listItem->task_priority }}</p>
+                        </div>
+                        <p class="task-date">{{ $listItem->task_date }} From {{ $listItem->task_time_from}} To {{ $listItem->task_time_to }}</p>
+                        <div class="task-details">
+                            <p>{{ $listItem->task_description }}</p>
+                            <p><i class="fas fa-tags"></i> {{ $listItem->task_tags }}</p>
+                        </div>
+                    </div>
                         <form action="{{ route('markNotCompleted', $listItem->id) }}" method="post" class="complete-form">
                             {{ csrf_field() }}
                             <button type="submit" class="complete-button"><img src="{{ asset('images\reload_icon.png') }}" alt="" srcset="" class="icon"></button>

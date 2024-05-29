@@ -25,6 +25,11 @@
         </header>
                 <h1 style="text-align: center;">Welcome Back</h1>
                 <p style="text-align: center;">Sign in to your TaskMaster account.</p>
+                @if(Session::has('error'))
+                    <div role='alert' class="form-alert form-failure">
+                        {{ Session::get('error') }}
+                    </div>
+                @endif
                 <form class="signin-form" action="{{ route('login_action') }}" method="post">
                 {{ csrf_field() }}
                     <div class="form-group">

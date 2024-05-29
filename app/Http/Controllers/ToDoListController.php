@@ -17,27 +17,39 @@ class ToDoListController extends Controller
 
         $newTask = new Tasks;
         $newTask->task_title = $request->task_title;
-        $newTask->task_note = $request->task_note;
         $newTask->task_date = $request->task_date;
-        $newTask->user_id = session('user_id');
+        $newTask->task_time_from = $request->task_time_from;
+        $newTask->task_time_to = $request->task_time_to;
+        $newTask->task_priority = $request->task_priority;
+        $newTask->task_category = $request->task_category;
+        // $newTask->task_status = $request->task_status;
+        $newTask->task_description = $request->task_description;
+        $newTask->task_tags = $request->task_tags;
         $newTask->is_completed = 0;
+        $newTask->user_id = session('user_id');
         $newTask->save();
         
         return redirect('/tasks');
     } 
-
+    
     public function updateTask(Request $request, $id){
-
-        $Task = Tasks::find($id);
-        $Task->task_title = $request->task_title;
-        $Task->task_note = $request->task_note;
-        $Task->task_date = $request->task_date;
-
-        $Task->save();
-
+    
+        $task = Tasks::find($id);
+        $task->task_title = $request->task_title;
+        $task->task_date = $request->task_date;
+        $task->task_time_from = $request->task_time_from;
+        $task->task_time_to = $request->task_time_to;
+        $task->task_priority = $request->task_priority;
+        $task->task_category = $request->task_category;
+        // $task->task_status = $request->task_status;
+        $task->task_description = $request->task_description;
+        $task->task_tags = $request->task_tags;
+    
+        $task->save();
+    
         return redirect('/tasks');
-
     }
+    
 
     public function markCompleted($id){
 
