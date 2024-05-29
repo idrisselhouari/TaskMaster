@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Sign In - TaskMaster</title>
 
-    <link rel="stylesheet" href="{{ asset('css/signinStyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth-style.css') }}">
 
 </head>
 <body>
     <div class="container">
-        <header class="header">
+        
+        <section class="signin-section">
+            
+            <div class="signin-container">
+            <header class="header">
             <nav class="navbar">
-                <div class="logo"><a href="{{ route('home')}}">TaskMaster</a></div>
+                <div class="logo"><a href="{{ route('home')}}"><img src="{{asset('images/logo.png')}}" alt="Task Master Logo" srcset="" class="task-master-logo"></a></div>
                 <div class="nav-buttons">
                     <button class="btn"><a href="{{ route('signUp') }}">Sign Up</a></button>
                 </div>
             </nav>
         </header>
-        <section class="signin-section">
-            <div class="signin-container">
                 <h1 style="text-align: center;">Welcome Back</h1>
                 <p style="text-align: center;">Sign in to your TaskMaster account.</p>
                 <form class="signin-form" action="{{ route('login_action') }}" method="post">

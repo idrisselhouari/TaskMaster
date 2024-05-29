@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>TASK MASTER - Home</title>
-  <link rel="stylesheet" href="{{asset('css/indexStyle.css')}}">
-  <style>
-    .task-master-logo{
-        width:150px;
-    }
-  
-  </style>
+
+  <link rel="stylesheet" href="{{asset('css/index-style.css')}}">
+
 </head>
 <body>
     <div class="container">
@@ -97,6 +94,5 @@
             <p>© 2024 TaskMaster. All rights reserved.</p>
         </footer>
     </div>
-
 </body>
 </html>

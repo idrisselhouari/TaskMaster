@@ -1,32 +1,57 @@
-/* Reset some default styles */
+/* Reset default styles */
 body, h1, h2, p, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-a{
+
+a {
     text-decoration: none;
-    color: rgb(94, 94, 207) ;
+    color: rgb(94, 94, 207);
     font-weight: bold;
 }
+
+.task-master-logo {
+    width: 150px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style for the placeholder */
+.no-tasks-placeholder {
+    text-align: center;
+}
+
+.placeholder-image {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.no-tasks-placeholder p {
+    font-size: 18px;
+    color: #333;
+}
+
 body {
     background: linear-gradient(135deg, #d6f1f1 10%, #dedef5 100%);
-    color: rgb(94, 94, 207) ;
-    /* display: flex; */
+    color: rgb(94, 94, 207);
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
-    /* overflow: hidden; */
 }
+
 h1 {
-    color: rgb(238,174,202); /* Fallback color */
+    color: rgb(238, 174, 202); /* Fallback color */
     background: radial-gradient(circle, rgb(124, 16, 146) 0%, rgb(94, 94, 207) 50%, rgb(0, 0, 0) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent; /* Uncomment if needed for broader browser support */
+    /* text-fill-color: transparent;  */
 }
 
 .container {
@@ -38,7 +63,7 @@ h1 {
     align-items: center;
     margin: 0 auto;
 }
-/* Add this to your CSS file or within a <style> tag */
+/* 
 .profile-container {
     position: relative;
     display: inline-block;
@@ -59,7 +84,7 @@ h1 {
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1;
-}
+} 
 
 .logout-button {
     background: none;
@@ -72,12 +97,12 @@ h1 {
 
 .logout-button:hover {
     color: #0056b3;
-}
+}*/
 
+/* Header styles */
 .header {
     width: 100%;
     padding: 20px 0;
-    /* margin-top: 2em; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,17 +116,12 @@ h1 {
     align-items: center;
 }
 
-.logo {
-    font-size: 2em;
-    font-weight: bold;
-}
 
 .nav-buttons .btn {
     background-color: #fff;
     color: #5151e5;
     border: none;
     padding: 10px 20px;
-    /* margin-left: 10px; */
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
@@ -113,18 +133,16 @@ h1 {
     transform: scale(1.1);
 }
 
+/* Content styles */
+.content {
+    width: 100%;
+    animation: fadeInUp 1s ease-out;
+    margin: auto;
+}
+
 .content h1 {
     margin-top: 20px;
     font-size: 3em;
-}
-
-.content {
-    width: 100%;
-    /* padding: 20px; */
-    animation: fadeInUp 1s ease-out;
-    margin: auto auto;
-    /* margin-top: auto; */
-    /* background-color: aqua; */
 }
 
 .content p {
@@ -132,11 +150,13 @@ h1 {
     margin-bottom: 30px;
 }
 
+/* Features section styles */
 .features {
     display: flex;
     justify-content: space-around;
     margin: 2em 0;
     height: auto;
+    animation: fadeInUp 1.5s ease-out;
 }
 
 .feature {
@@ -145,13 +165,11 @@ h1 {
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column; /* Ensure content stacks vertically */
-    justify-content: flex-end; /* Align content to the bottom */
+    flex-direction: column;
+    justify-content: flex-end;
     border-radius: 10px;
-    /* color: white; */
-    padding: 20px; /* Add padding for better readability */
-
-
+    padding: 20px;
+    animation: fadeIn 1.5s ease-out;
 }
 
 .feature h2 {
@@ -163,9 +181,9 @@ h1 {
     font-size: 1.2em;
     margin-bottom: 1em;
 }
+
 #feature1 {
     background-image: url("../images/welcome/feature1.png");
-    
 }
 
 #feature2 {
@@ -176,41 +194,49 @@ h1 {
     background-image: url("../images/welcome/feature3.png");
 }
 
-.section-content{
+/* Section content styles */
+.section-content {
     display: flex;
     text-align: center;
     align-items: center;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin: 1.5em 0;
+    animation: fadeInUp 2s ease-out;
 }
-.section-content img{
+
+.section-content img {
+    width: 40%;
+    margin: auto;
+    animation: zoomIn 1.5s ease-out;
+}
+
+.section-content .section-text {
     width: 40%;
     margin: auto;
 }
-.section-content .section-text{
-    width: 40%;
-    margin: auto;
-}
-.section-content h2{
+
+.section-content h2 {
     font-size: 2em;
     margin: 1.5em 0;
 }
-.section-content p{
+
+.section-content p {
     font-size: large;
 }
 
-section h2{
-    margin-top: 1em;
-    margin-bottom: 1em;
+section h2 {
+    margin: 1em 0;
 }
-/* FOOTER STYLE */
+
+/* Footer styles */
 .footer {
     margin: 3em 1em;
     display: flex;
+    animation: fadeInUp 2.5s ease-out;
 }
 
-#id_offers{
+#id_offers {
     width: 70%;
+    animation: fadeIn 2s ease-out;
 }
 
 .footer p {
@@ -219,13 +245,16 @@ section h2{
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 blockquote {
     font-size: xx-large;
     font-weight: bold;
     font-style: italic;
     margin: 20px 0;
-  } 
+    animation: fadeInUp 2.5s ease-out;
+}
 
+/* Keyframes for animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -239,4 +268,9 @@ blockquote {
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
 }

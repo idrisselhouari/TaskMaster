@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #f4f4f9;
@@ -8,9 +9,14 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
 }
-/* HEADER STYLE */
-/* Add this to your CSS file or within a <style> tag */
+
+
+.task-master-logo {
+    width: 150px;
+}
+/* Header Styles */
 .profile-container {
     position: relative;
     display: inline-block;
@@ -29,7 +35,7 @@ body {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 10px 0 0 10px;
-    width:15em; 
+    width: 15em; 
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1;
@@ -47,7 +53,7 @@ body {
     color: #0056b3;
 }
 
-header{
+header {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -57,33 +63,26 @@ header{
     z-index: 100;
     background-color: #f4f4f9;
 }
-header ul{
+
+header ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
     list-style: none;
 }
-header ul li{
+
+header ul li {
     margin: 0 15px;
-    /* width: 6em; */
-    /* text-align: center; */
 }
-header a{
+
+header a {
     text-decoration: none;
     color: #007bff;
     padding: 6px;
     font-weight: bold;
-    /* width: 100%; */
-}
-header a:hover{
-    color: white;
-    background-color: #007bff;
-    border: #007bff solid 1px;
-    border-radius: 10em;
-    font-weight: bold;
 }
 
-/* TASKS LIST STYLE */
+/* Task List Styles */
 .task-list {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -109,39 +108,29 @@ header a:hover{
     margin-left: 10px;
 }
 
-/* COMPLETE TASK BUTTON STYLE  */
-.task-actions{
+/* Task Actions Styles */
+.task-actions {
     display: flex;
 }
-.icon{
+
+.icon {
     width: 30px;
     height: 30px;
 }
-.complete-button, .delete-button{
+
+.complete-button,
+.delete-button {
     background-color: #fff;
-    /* color: #fff; */
     border: none;
-    /* padding: 10px 15px; */
     padding: 4px;
     border-radius: 5px;
-    cursor: pointer;
-    /* font-size: 14px; */
     font-weight: bold;
     cursor: pointer;
-
     transition: all 0.3s ease;
 }
 
-/* .complete-button:hover {
-    background-color: #218838;
-} */
-
-/* ADD TASK BUTTON STYLE */
+/* Add Task Button Styles */
 .add-button {
-    /* display: block; */
-    /* width: 100%; */
-    /* max-width: 200px; */
-    /* margin: 20px auto; */
     padding: 7px 2em;
     background-color: #007bff;
     color: #fff;
@@ -161,74 +150,8 @@ header a:hover{
     box-shadow: 0 6px 10px rgba(0, 123, 255, 0.2);
 }
 
-/* THE ADDITION FORM STYLE  */
-.add-task-form {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    width: 100%;
-    max-width: 400px;
-}
-
-.add-task-form label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.add-task-form input[type="text"],
-.add-task-form input[type="date"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.add-task-form button {
-    display: inline-block;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.add-task-form button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.add-task-form button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-.add-task-form button[type="button"] {
-    background-color: #6c757d;
-    color: #fff;
-    margin-left: 10px;
-}
-
-.add-task-form button[type="button"]:hover {
-    background-color: #5a6268;
-}
-
-
-
-
-/* Update Form Styles */
-/* Add to your existing CSS file */
-
+/* Form Styles */
+.add-task-form,
 .update-task-form {
     display: none;
     position: fixed;
@@ -245,12 +168,15 @@ header a:hover{
     max-width: 400px;
 }
 
+.add-task-form label,
 .update-task-form label {
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
 }
 
+.add-task-form input[type="text"],
+.add-task-form input[type="date"],
 .update-task-form input[type="text"],
 .update-task-form input[type="date"] {
     width: calc(100% - 20px);
@@ -261,6 +187,7 @@ header a:hover{
     font-size: 14px;
 }
 
+.add-task-form button,
 .update-task-form button {
     display: inline-block;
     padding: 10px 15px;
@@ -271,26 +198,45 @@ header a:hover{
     transition: background-color 0.3s ease;
 }
 
+.add-task-form button[type="submit"],
 .update-task-form button[type="submit"] {
     background-color: #007bff;
     color: #fff;
 }
 
+.add-task-form button[type="submit"]:hover,
 .update-task-form button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+.add-task-form button[type="button"],
 .update-task-form button[type="button"] {
     background-color: #6c757d;
     color: #fff;
     margin-left: 10px;
 }
 
+.add-task-form button[type="button"]:hover,
 .update-task-form button[type="button"]:hover {
     background-color: #5a6268;
 }
 
-/* SHOW HIDDEN FORM STYLE */
+/* Placeholder Styles */
+.no-tasks-placeholder {
+    text-align: center;
+}
+
+.placeholder-image {
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+.no-tasks-placeholder p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Overlay Styles */
 .overlay {
     display: none;
     position: fixed;

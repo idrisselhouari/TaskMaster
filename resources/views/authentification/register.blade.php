@@ -6,21 +6,22 @@
 
     <title>Sign Up - TaskMaster</title>
 
-    <link rel="stylesheet" href="{{ asset('css/signupStyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth-style.css') }}">
 
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <nav class="navbar">
-                <div class="logo"><a href="{{ route('home')}}">TaskMaster</a></div>
-                <div class="nav-buttons">
-                    <button class="btn"><a href="{{ route('signIn') }}">Sign In</a></button>
-                </div>
-            </nav>
-        </header>
+        
         <section class="signup-section">
             <div class="signup-container">
+                <header class="header">
+                    <nav class="navbar">
+                    <div class="logo"><a href="{{ route('home')}}"><img src="{{asset('images/logo.png')}}" alt="Task Master Logo" srcset="" class="task-master-logo"></a></div>
+                        <div class="nav-buttons">
+                            <button class="btn"><a href="{{ route('signIn') }}">Sign In</a></button>
+                        </div>
+                    </nav>
+                </header>
                 <h1 style="text-align: center;">Create Your Account</h1>
                 <p style="text-align: center;">Join TaskMaster and start organizing your tasks efficiently.</p>
                 @if(Session::has('success'))

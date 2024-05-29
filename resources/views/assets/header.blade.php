@@ -1,5 +1,5 @@
 <header>
-    <h1>TaskTracker</h1>
+    <div class="logo"><a href="{{ route('tasks')}}"><img src="{{asset('images/logo.png')}}" alt="Task Master Logo" srcset="" class="task-master-logo"></a></div>
     <nav>
         <ul>
             <li><button id="showFormButton" class="add-button">Add</button></li>

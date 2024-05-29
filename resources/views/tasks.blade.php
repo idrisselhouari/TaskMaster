@@ -21,25 +21,32 @@
     <div class="container">
 
         <div>
-            @foreach ($listItems as $listItem)
-            <div class="task-list" data-id="{{ $listItem->id }}" data-title="{{ $listItem->task_title }}" data-date="{{ $listItem->task_date }}" data-note="{{ $listItem->task_note }}">
-                <p class="task-item">{{ $listItem->task_title }} <span class="task-date">{{ $listItem->task_date }}</span> {{ $listItem->task_note }}</p>
-
-                <div class="task-actions">
-                    <form action="{{ route('markCompleted', $listItem->id) }}" method="post" class="complete-form">
-                        {{ csrf_field() }}
-                        <button type="submit" class="complete-button"><img src="{{ asset('images/submit_icon.png') }}" alt="Complete" class="icon"></button>
-                    </form>
-
-                    <form action="{{ route('destroyTask', $listItem->id) }}" method="post" class="delete-form">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-                        <button type="submit" class="delete-button"><img src="{{ asset('images/delete_icon.png') }}" alt="Delete" class="icon"></button>
-                    </form>
+            @if ($listItems->isEmpty())
+                <div class="no-tasks-placeholder">
+                    <img src="{{ asset('images/no-tasks.png') }}" alt="No tasks" class="placeholder-image">
+                    <p>No tasks found. Start adding tasks to organize your day!</p>
                 </div>
-            </div>
-            @endforeach
+            @else
+                @foreach ($listItems as $listItem)
+                <div class="task-list" data-id="{{ $listItem->id }}" data-title="{{ $listItem->task_title }}" data-date="{{ $listItem->task_date }}" data-note="{{ $listItem->task_note }}">
+                    <p class="task-item">{{ $listItem->task_title }} <span class="task-date">{{ $listItem->task_date }}</span> {{ $listItem->task_note }}</p>
 
+                    <div class="task-actions">
+                        <form action="{{ route('markCompleted', $listItem->id) }}" method="post" class="complete-form">
+                            {{ csrf_field() }}
+                            <button type="submit" class="complete-button"><img src="{{ asset('images/submit_icon.png') }}" alt="Complete" class="icon"></button>
+                        </form>
+
+                        <form action="{{ route('destroyTask', $listItem->id) }}" method="post" class="delete-form">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <button type="submit" class="delete-button"><img src="{{ asset('images/delete_icon.png') }}" alt="Delete" class="icon"></button>
+                        </form>
+                    </div>
+                </div>
+                @endforeach
+            @endif
+            
             @include('taskActions/addTaskForm')
 
             @foreach ($listItems as $listItem)
