@@ -32,6 +32,9 @@ This project aims to provide a comprehensive task management system where users 
 
 1. Make sure you installed Composer
 
+    ```bash
+    composer install
+    ```
 
 2. Copy the example environment file and create a new `.env` file:
 
