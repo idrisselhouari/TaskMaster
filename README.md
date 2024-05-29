@@ -30,7 +30,7 @@ This project aims to provide a comprehensive task management system where users 
 
 ## Setting Up the Project
 
-1. Make sure you installed Composer
+1. Make sure you installed Composer. And run this:
 
     ```bash
     composer install
