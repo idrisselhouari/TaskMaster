@@ -13,7 +13,7 @@ a {
 }
 
 .task-master-logo {
-    width: 150px;
+    width: 120px;
 }
 .container {
     max-width: 800px;
@@ -46,6 +46,7 @@ body {
 }
 
 h1 {
+    font-size: 2.5em;
     color: rgb(238, 174, 202); /* Fallback color */
     background: radial-gradient(circle, rgb(124, 16, 146) 0%, rgb(94, 94, 207) 50%, rgb(0, 0, 0) 100%);
     -webkit-background-clip: text;
@@ -63,41 +64,6 @@ h1 {
     align-items: center;
     margin: 0 auto;
 }
-/* 
-.profile-container {
-    position: relative;
-    display: inline-block;
-}
-
-.profile-image {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.profile-info {
-    display: none;
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-} 
-
-.logout-button {
-    background: none;
-    border: none;
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: underline;
-    padding: 0;
-}
-
-.logout-button:hover {
-    color: #0056b3;
-}*/
 
 /* Header styles */
 .header {
@@ -227,23 +193,12 @@ section h2 {
     margin: 1em 0;
 }
 
-/* Footer styles */
-.footer {
-    margin: 3em 1em;
-    display: flex;
-    animation: fadeInUp 2.5s ease-out;
-}
 
 #id_offers {
-    width: 70%;
+    width: 80%;
+    /* height: 680px; */
+    margin: 0 0;
     animation: fadeIn 2s ease-out;
-}
-
-.footer p {
-    font-size: 1em;
-    opacity: 0.7;
-    font-weight: bold;
-    margin-bottom: 10px;
 }
 
 blockquote {
@@ -252,6 +207,20 @@ blockquote {
     font-style: italic;
     margin: 20px 0;
     animation: fadeInUp 2.5s ease-out;
+}
+
+/* Footer styles */
+.footer {
+    margin: 3em 1em;
+    display: flex;
+    animation: fadeInUp 2.5s ease-out;
+}
+
+.footer p {
+    font-size: 1em;
+    opacity: 0.7;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 /* Keyframes for animations */

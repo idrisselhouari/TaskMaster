@@ -23,7 +23,7 @@ Route::get('/', [AuthController::class, 'index'])->name('home');
 Route::get('/Register', [AuthController::class, 'registerPage'])->name('signUp');
 Route::post('/Register', [AuthController::class, 'registerPost'])->name('register_action');
 
-Route::get('/Login', [AuthController::class, 'loginPage']);
+// Route::get('/Login', [AuthController::class, 'loginPage']);
 Route::get('/Login', [AuthController::class, 'loginPage'])->name('signIn');
 Route::post('/Login', [AuthController::class, 'loginPost'])->name('login_action');
 

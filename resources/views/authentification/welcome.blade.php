@@ -24,39 +24,38 @@
 
         <section>
 
-            <h1>Organisez enfin votre vie et votre travail.</h1>
-            <h2>Gagnez en concentration, en organisation et en sérénité avec TASK MASTER. La 1ère application de gestion de tâches et de to do list.</h2>
+            <h1 >Finally organize your life and your work.</h1>
+            <h2>Gain focus, organization, and peace of mind with TASK MASTER. The first task management and to-do list app.</h2>
             <div class="features">
                 <div class="feature" id="feature1">
                     <div class="feature-content">
-                        <h2>Facile à utiliser</h2>
-                        <p>Notre interface intuitive vous permet de gérer vos tâches en toute simplicité.</p>
+                        <h2>Easy to Use</h2>
+                        <!-- <p>Our intuitive interface allows you to manage your tasks with ease.</p> -->
+                        <p>Manage you tasks with the best easest way.</p>
                     </div>
                 </div>
                 <div class="feature" id="feature2">
                     <div class="feature-content">    
-                        <h2>Restez organisé</h2>
-                        <p>Gardez une trace de toutes vos tâches et de tous vos projets en un seul endroit.</p>
+                        <h2>Stay Organized</h2>
+                        <p>Keep track of all your tasks and projects in one place.</p>
                     </div>
                 </div>
                 <div class="feature" id="feature3">
                     <div class="feature-content">
-                        <h2>Stimuler la productivité</h2>
-                        <p>Donnez la priorité à vos tâches et faites-en plus en moins de temps.</p>
+                        <h2>Boost Productivity</h2>
+                        <p>Prioritize your tasks and get more done in less time.</p>
                     </div>
                 </div>
             </div>
-            <h3>+42 millions de personnes et d'équipe confient leur sérénité et leur productivité à TASK MASTER</h3>
-
+            <h3>Over 42 million individuals and teams trust TASK MASTER with their peace of mind and productivity.</h3>
         </section>
 
         <section>
             <div class="section-content">
                 <div class="section-text">
-                    <p>Videz votre esprit</p>
-                    <h2>Le meilleur moyen d'avoir l'esprit libre.</h2>
-                    <p>Notez simplement vos tâches comme elles viennent. La reconnaissance du langage naturel de TASK MASTER, unique en son genre, remplira instantanément votre liste de tâches.</p>
-                
+                    <p>Clear Your Mind</p>
+                    <h2>The Best Way to Have a Free Mind.</h2>
+                    <p>Simply jot down your tasks as they come. TASK MASTER's unique natural language processing will instantly populate your task list.</p>
                 </div>
                 <img src="{{asset('images/welcome/image2.png')}}" alt="Image">
             </div>
@@ -69,25 +68,22 @@
                 <img src="{{asset('images/welcome/image3.png')}}" alt="Image">
 
                 <div class="section-text">
-                    <p>Concentrez-vous sur les choses importantes</p>
-                    <h2>La clarté mentale dont vous rêviez.</h2>
-                    <p> Vos listes de tâches sont automatiquement triées dans les vues Aujourd'hui, Prochainement et les filtres personnalisés, pour mieux vous concentrer sur ce qui compte.</p>
+                    <p>Focus on the Important Things</p>
+                    <h2>The Mental Clarity You've Been Dreaming of.</h2>
+                    <p>Your task lists are automatically sorted into Today, Upcoming, and custom filters views, helping you concentrate on what matters most.</p>
                 </div>    
         </section>
 
         <section>
-            <blockquote>"TASK MASTER est un excellent moyen de garder la trace de toutes vos tâches, petites et grandes"</blockquote>
-            
-
+            <blockquote>"TASK MASTER is an excellent way to keep track of all your tasks, big and small."</blockquote>  
         </section>
         <img src="{{asset('images/welcome/image4.png')}}" alt="Image">
         <section>
-            <!-- <h2>Explorez tout ce que TASK MASTER vous offre</h2> -->
+            <h2>Explore all that TASK MASTER offers you.</h2>
             
             <img src="{{asset('images/welcome/image6.png')}}" alt="Image" id="id_offers">
 
-            <blockquote>Gagnez en sérénité et en clarté avec l'application de productivité préférée des utilisateurs</blockquote>
-        </section>
+            <blockquote>Gain peace of mind and clarity with the users' favorite productivity app.</blockquote>        </section>
         <img src="{{asset('images/welcome/image5.png')}}" alt="Image">
 
         <footer class="footer">

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Task Master - Tasks</title>
+    <title>Task Master - My Tasks</title>
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -34,10 +34,20 @@
                             <h3 class="task-item">{{ $listItem->task_title }}</h3>
                             <p><span>Category:</span> {{ $listItem->task_category }}  |  <span>Priority:</span> {{ $listItem->task_priority }}</p>
                         </div>
-                        <p class="task-date">{{ $listItem->task_date }} From {{ $listItem->task_time_from}} To {{ $listItem->task_time_to }}</p>
+                        <p class="task-date">{{ $listItem->task_date }} 
+                            @if (!empty($listItem->task_time_from)) 
+                                From {{ $listItem->task_time_from }} 
+    
+                                @if (!empty($listItem->task_time_to )) 
+                                    To {{ $listItem->task_time_to }}
+                                @endif
+                            @endif 
+                        </p>
                         <div class="task-details">
                             <p>{{ $listItem->task_description }}</p>
-                            <p><i class="fas fa-tags"></i> {{ $listItem->task_tags }}</p>
+                            @if (!empty($listItem->task_tags))
+                                <p><i class="fas fa-tags"></i> {{ $listItem->task_tags }}</p>
+                            @endif
                         </div>
                     </div>
 
@@ -54,8 +64,6 @@
                         </form>
                     </div>
                 </div>
-
-
                 @endforeach
             @endif
             
@@ -65,8 +73,12 @@
                 @include('taskActions/updateTaskForm')
             @endforeach
         </div>
-    </div>
 
+        
+    </div>
+    <footer class="footer">
+            <p>© 2024 TaskMaster. All rights reserved.</p>
+    </footer>
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

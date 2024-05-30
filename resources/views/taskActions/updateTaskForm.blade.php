@@ -3,10 +3,10 @@
     <form id="taskUpdateForm" action="{{ route('updateTask', $listItem->id) }}" method="post" >
         {{ csrf_field() }}
         {{ method_field('PUT') }}
-        <label for="update-task-title">Task Title</label>
+        <label for="update-task-title">Task Title <span class="important-attribut">*</span></label>
         <input type="text" id="update-task-title" name="task_title" required>
         
-        <label for="update-task-date">Task Date</label>
+        <label for="update-task-date">Task Date <span class="important-attribut">*</span></label>
         <input type="date" id="update-task-date" name="task_date" required>
         
         <div class="inline-fields">
@@ -18,7 +18,7 @@
     
         <div class="inline-fields">
             <div class="field-group">
-                <label for="update-task-priority">Priority</label>
+                <label for="update-task-priority">Priority <span class="important-attribut">*</span></label>
                 <select id="update-task-priority" name="task_priority">
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
@@ -27,7 +27,7 @@
             </div>
             
             <div class="field-group">
-                <label for="update-task-category">Category</label>
+                <label for="update-task-category">Category <span class="important-attribut">*</span></label>
                 <select id="update-task-category" name="task_category">
                     <option value="work">Work</option>
                     <option value="personal">Personal</option>
