@@ -1,8 +1,10 @@
-# TaskMaster: Task Management System
-![logo](https://github.com/idrisselhouari/TaskMaster/assets/95748912/c8ece7d3-6d18-4325-accb-d3e5a9e87b87)
-
-This project aims to provide a comprehensive task management system where users can create, assign, track, and manage tasks efficiently. It's built using the Laravel framework along with PHP, HTML, CSS, and JavaScript.
-
+<h1 align="center">TaskMaster: Task Management System</h1>
+<p align="center">
+  <img src="https://github.com/idrisselhouari/TaskMaster/assets/95748912/c8ece7d3-6d18-4325-accb-d3e5a9e87b87" alt="logo">
+</p>
+<p align="center">
+  This project aims to provide a comprehensive task management system where users can create, assign, track, and manage tasks efficiently. It's built using the Laravel framework along with PHP, HTML, CSS, and JavaScript.
+</p>
 
 ## Technologies Used
 
