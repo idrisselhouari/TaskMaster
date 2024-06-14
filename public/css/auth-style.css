@@ -39,7 +39,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    text-align: center;
+    /* text-align: center; */
     /* overflow: hidden; */
 }
 
@@ -62,7 +62,7 @@ h1 {
 
 .header {
     width: 100%;
-    padding: 0 0; /* Adjusted to be the same for both pages */
+    padding: 0 0; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,7 +136,7 @@ h1 {
 
 .signup-form .form-group, .signin-form .form-group {
     margin-bottom: 15px;
-    flex: 1; /* Specific to sign-up page */
+    flex: 1; 
     margin-right: 10px; /* Specific to sign-up page */
 }
 

@@ -55,6 +55,8 @@
                 @endforeach
             @endif
 
+            <div class="overlay" id="overlay"></div>
+
             @include('taskActions/addTaskForm')
 
         </div>

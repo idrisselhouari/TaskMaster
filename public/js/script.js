@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const tasks = document.querySelectorAll('.task-list');
-    const overlay = document.getElementById('updateOverlay');
+    const overlay = document.getElementById('overlay');
     const updateForm = document.getElementById('updateForm');
 
     const updateTaskTitle = document.getElementById('update-task-title');
@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tasks.forEach(task => {
         task.addEventListener('click', function (event) {
+            const taskId = this.getAttribute('data-id');
             const taskTitle = this.getAttribute('data-title');
             const taskDate = this.getAttribute('data-date');
             const taskTimeFrom = this.getAttribute('data-time-from');
@@ -64,10 +65,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const taskCategory = this.getAttribute('data-category');
             const taskTags = this.getAttribute('data-tags');
 
-            
             if (event.target.closest('button')) {
                 return;
             }
+            // taskUpdateForm.action = "{{ route('updateTask'," + taskId +" ) }}";
+
             updateTaskTitle.value = taskTitle;
             updateTaskPriority.value = taskPriority;
             updateTaskCategory.value = taskCategory;
@@ -78,21 +80,19 @@ document.addEventListener('DOMContentLoaded', function () {
             updateTaskDescription.value = taskDescription;
             updateTaskTags.value = taskTags;
 
-            // taskUpdateForm.action = `/updateTask`;  // Update with the correct route if necessary
-
             overlay.classList.add('show');
             updateForm.classList.add('show');
         });
-    });
+    
+        cancelUpdateButton.addEventListener('click', function () {
+            overlay.classList.remove('show');
+            updateForm.classList.remove('show');
+        });
 
-    cancelUpdateButton.addEventListener('click', function () {
-        overlay.classList.remove('show');
-        updateForm.classList.remove('show');
-    });
-
-    overlay.addEventListener('click', function () {
-        overlay.classList.remove('show');
-        updateForm.classList.remove('show');
+        overlay.addEventListener('click', function () {
+            overlay.classList.remove('show');
+            updateForm.classList.remove('show');
+        });
     });
 });
 

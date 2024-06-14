@@ -1,4 +1,3 @@
-<div class="overlay" id="updateOverlay"></div>
 <div class="update-task-form" id="updateForm">
     <form id="taskUpdateForm" action="{{ route('updateTask', $listItem->id) }}" method="post" >
         {{ csrf_field() }}

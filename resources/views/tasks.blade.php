@@ -28,7 +28,7 @@
                 </div>
             @else
                 @foreach ($listItems as $listItem)
-                <div class="task-list" data-title="{{ $listItem->task_title }}" data-date="{{ $listItem->task_date }}" data-time-from="{{ $listItem->task_time_from }}" data-time-to="{{ $listItem->task_time_to }}" data-description="{{ $listItem->task_description }}" data-priority="{{ $listItem->task_priority }}" data-category="{{ $listItem->task_category }}" data-tags="{{ $listItem->task_tags }}">
+                <div class="task-list" data-id="{{ $listItem->id }}" data-title="{{ $listItem->task_title }}" data-date="{{ $listItem->task_date }}" data-time-from="{{ $listItem->task_time_from }}" data-time-to="{{ $listItem->task_time_to }}" data-description="{{ $listItem->task_description }}" data-priority="{{ $listItem->task_priority }}" data-category="{{ $listItem->task_category }}" data-tags="{{ $listItem->task_tags }}">
                     <div class="task-info">
                         <div class="task-title">
                             <h3 class="task-item">{{ $listItem->task_title }}</h3>
@@ -67,18 +67,22 @@
                 @endforeach
             @endif
             
+            <div class="overlay" id="overlay"></div>
+        
             @include('taskActions/addTaskForm')
 
-            @foreach ($listItems as $listItem)
-                @include('taskActions/updateTaskForm')
+            @foreach ($listItems as $listItem)                
+                @include('taskActions/updateTaskForm')  
+            <!-- Here I tried to use javascript for delete the duplication of the form but it's not working !!!!!- -->
             @endforeach
-        </div>
 
-        
+        </div>
     </div>
+
     <footer class="footer">
             <p>© 2024 TaskMaster. All rights reserved.</p>
     </footer>
+    
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

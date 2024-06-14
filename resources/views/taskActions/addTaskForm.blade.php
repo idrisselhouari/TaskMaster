@@ -1,5 +1,3 @@
-<div class="overlay" id="overlay"></div>
-
 <form action="{{ route('addTask') }}" method="post" class="add-task-form" id="addTaskForm">
     {{ csrf_field() }}
     
