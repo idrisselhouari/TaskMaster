@@ -29,7 +29,7 @@ class ToDoListController extends Controller
         $newTask->user_id = session('user_id');
         $newTask->save();
         
-        return redirect('/tasks');
+        return redirect('/mytasks');
     } 
     
     public function updateTask(Request $request, $id){
@@ -47,7 +47,7 @@ class ToDoListController extends Controller
     
         $task->save();
     
-        return redirect('/tasks');
+        return redirect('/mytasks');
     }
     
 
@@ -57,7 +57,7 @@ class ToDoListController extends Controller
         $listTask->is_completed = 1;
         $listTask->save();
 
-        return redirect('/completedtasks');
+        return redirect('/mytasks/completed');
     }
 
     public function markNotCompleted($id){
@@ -66,7 +66,7 @@ class ToDoListController extends Controller
         $listTask->is_completed = 0;
         $listTask->save();
 
-        return redirect('/tasks');
+        return redirect('/mytasks');
     }
 
     public function deleteTask($id)
@@ -74,7 +74,7 @@ class ToDoListController extends Controller
         $task = Tasks::findOrFail($id);
         $task->delete();
         
-        return redirect('/tasks');
+        return redirect('/mytasks');
     }
 }
  
